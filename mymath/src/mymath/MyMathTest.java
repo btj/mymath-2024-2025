@@ -21,6 +21,13 @@ class MyMathTest {
 		
 	}
 	
+	@Test
+	void testNegate() {
+		int[] myArray = new int[] {10, 20, 30};
+		MyMath.negate(myArray);
+		assertArrayEquals(new int[] {-10, -20, -30}, myArray);
+	}
+	
 	// TODO: Test `add`!
 
 }
