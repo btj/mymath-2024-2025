@@ -28,6 +28,12 @@ class MyMathTest {
 		assertArrayEquals(new int[] {-10, -20, -30}, myArray);
 	}
 	
-	// TODO: Test `add`!
+	@Test
+	void testAdd() {
+		int[] array1 = {10, 20, 30};
+		int[] array2 = {1, 2, 3};
+		MyMath.add(array1, array2);
+		assertArrayEquals(new int[] {11, 22, 33}, array1);
+	}
 
 }

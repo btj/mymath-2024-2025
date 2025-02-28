@@ -61,12 +61,25 @@ public class MyMath {
 	}
 	
 	/**
-	 * Adds the elements of the second array to the correspond elements of the first array.
+	 * Adds the elements of the second array to the corresponding elements of the first array.
 	 * 
-	 * TODO: Document formally!
+	 * @throws IllegalArgumentException | array1 == null || array2 == null
+	 * @throws IllegalArgumentException | array1.length != array2.length
+	 * @mutates | array1
+	 * @inspects | array2
+	 * @post | IntStream.range(0, array1.length).allMatch(i ->
+	 *       |     array1[i] == old(array1.clone())[i] + array2[i])
 	 */
 	public static void add(int[] array1, int[] array2) {
-		// TODO: Implement!
+		if (array1 == null)
+			throw new IllegalArgumentException("`array1` is null");
+		if (array2 == null)
+			throw new IllegalArgumentException("`array2` is null");
+		if (array1.length != array2.length)
+			throw new IllegalArgumentException("The lengths of `array1` and `array2` are not equal");
+		
+		for (int i = 0; i < array1.length; i++)
+			array1[i] += array2[i];
 	}
 
 }
